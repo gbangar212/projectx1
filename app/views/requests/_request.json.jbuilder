@@ -1,0 +1,2 @@
+json.extract! request, :id, :date_1, :time_1, :date_2, :time_2, :date_3, :time_3, :date_4, :time_4, :date_5, :time_5, :mode, :approved, :approved_date, :approved_time, :created_at, :updated_at
+json.url request_url(request, format: :json)

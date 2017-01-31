@@ -1,0 +1,2 @@
+module SessionsCandidateHelper
+end

@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Interviewers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Bio</th>
+      <th>Skill 1</th>
+      <th>Skill 2</th>
+      <th>Skill 3</th>
+      <th>Skill 4</th>
+      <th>Skill 5</th>
+      <th>Tel no</th>
+      <th>Skype</th>
+      <th>Linkedin url</th>
+      <th>Voice call y</th>
+      <th>Voice call r</th>
+      <th>Video call y</th>
+      <th>Video call r</th>
+      <th>Meeting y</th>
+      <th>Meeting r</th>
+      <th>Currency</th>
+      <th>Current emp</th>
+      <th>Prev emp 1</th>
+      <th>Prev emp 2</th>
+      <th>Rating</th>
+      <th>No of rating</th>
+      <th>Money earner</th>
+      <th>Money disbursed</th>
+      <th>Bachelor College</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interviewers.each do |interviewer| %>
+      <tr>
+        <td><%= interviewer.email_id %></td>
+        <td><%= interviewer.name %></td>
+        <td><%= interviewer.bio %></td>
+        <td><%= interviewer.skill_1 %></td>
+        <td><%= interviewer.skill_2 %></td>
+        <td><%= interviewer.skill_3 %></td>
+        <td><%= interviewer.skill_4 %></td>
+        <td><%= interviewer.skill_5 %></td>
+        <td><%= interviewer.tel_no %></td>
+        <td><%= interviewer.skype_id %></td>
+        <td><%= interviewer.linkedin_url %></td>
+        <td><%= interviewer.voice_call_y %></td>
+        <td><%= interviewer.voice_call_r %></td>
+        <td><%= interviewer.video_call_y %></td>
+        <td><%= interviewer.video_call_r %></td>
+        <td><%= interviewer.meeting_y %></td>
+        <td><%= interviewer.meeting_r %></td>
+        <td><%= interviewer.currency %></td>
+        <td><%= interviewer.current_emp %></td>
+        <td><%= interviewer.prev_emp_1 %></td>
+        <td><%= interviewer.prev_emp_2 %></td>
+        <td><%= interviewer.rating %></td>
+        <td><%= interviewer.no_of_rating %></td>
+        <td><%= interviewer.money_earner %></td>
+        <td><%= interviewer.money_disbursed %></td>
+        <td><%= interviewer.bachelor_college %></td>
+        <td><%= link_to 'Show', interviewer %></td>
+        <td><%= link_to 'Edit', edit_interviewer_path(interviewer) %></td>
+        <td><%= link_to 'Destroy', interviewer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interviewer', new_interviewer_path %>

@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email_id: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  name: MyString
+  bio: MyText
+  skill_1: MyString
+  skill_2: MyString
+  skill_3: MyString
+  skill_4: MyString
+  skill_5: MyString
+  tel_no: MyString
+  skype_id: MyString
+  linkedin_url: MyString
+  voice_call_y: MyString
+  voice_call_r: 1.5
+  video_call_y: MyString
+  video_call_r: 1.5
+  meeting_y: MyString
+  meeting_r: 1.5
+  currency: MyString
+  current_emp: MyString
+  prev_emp_1: MyString
+  prev_emp_2: MyString
+  rating: 1
+  no_of_rating: 1
+  money_earner: 1.5
+  money_disbursed: 1.5
+
+two:
+  email_id: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  name: MyString
+  bio: MyText
+  skill_1: MyString
+  skill_2: MyString
+  skill_3: MyString
+  skill_4: MyString
+  skill_5: MyString
+  tel_no: MyString
+  skype_id: MyString
+  linkedin_url: MyString
+  voice_call_y: MyString
+  voice_call_r: 1.5
+  video_call_y: MyString
+  video_call_r: 1.5
+  meeting_y: MyString
+  meeting_r: 1.5
+  currency: MyString
+  current_emp: MyString
+  prev_emp_1: MyString
+  prev_emp_2: MyString
+  rating: 1
+  no_of_rating: 1
+  money_earner: 1.5
+  money_disbursed: 1.5

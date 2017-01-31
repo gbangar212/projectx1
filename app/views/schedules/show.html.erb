@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Request:</strong>
+  <%= @schedule.request_id %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @schedule.from_id %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @schedule.to_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @schedule.date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @schedule.start_time %>
+</p>
+
+<p>
+  <strong>Mode:</strong>
+  <%= @schedule.mode %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

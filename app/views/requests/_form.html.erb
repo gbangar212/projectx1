@@ -1,0 +1,87 @@
+<%= form_for(request) do |f| %>
+  <% if request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_1 %>
+    <%= f.date_select :date_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_1 %>
+    <%= f.time_select :time_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_2 %>
+    <%= f.date_select :date_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_2 %>
+    <%= f.time_select :time_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_3 %>
+    <%= f.date_select :date_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_3 %>
+    <%= f.time_select :time_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_4 %>
+    <%= f.date_select :date_4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_4 %>
+    <%= f.time_select :time_4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_5 %>
+    <%= f.date_select :date_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_5 %>
+    <%= f.time_select :time_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mode %>
+    <%= f.text_field :mode %>
+  </div>
+
+  <div class="field">
+    <%= f.label :approved %>
+    <%= f.text_field :approved %>
+  </div>
+
+  <div class="field">
+    <%= f.label :approved_date %>
+    <%= f.date_select :approved_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :approved_time %>
+    <%= f.time_select :approved_time %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

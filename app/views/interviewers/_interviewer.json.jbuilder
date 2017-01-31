@@ -1,0 +1,2 @@
+json.extract! interviewer, :id, :email_id, :name, :bio, :skill_1, :skill_2, :skill_3, :skill_4, :skill_5, :tel_no, :skype_id, :linkedin_url, :voice_call_y, :voice_call_r, :video_call_y, :video_call_r, :meeting_y, :meeting_r, :currency, :current_emp, :prev_emp_1, :prev_emp_2, :rating, :no_of_rating, :money_earner, :money_disbursed, :created_at, :updated_at
+json.url interviewer_url(interviewer, format: :json)

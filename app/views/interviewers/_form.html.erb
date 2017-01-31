@@ -1,0 +1,160 @@
+<%= form_for(interviewer) do |f| %>
+  <% if interviewer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(interviewer.errors.count, "error") %> prohibited this interviewer from being saved:</h2>
+
+      <ul>
+      <% interviewer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email_id %>
+    <%= f.text_field :email_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_1 %>
+    <%= f.text_field :skill_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_2 %>
+    <%= f.text_field :skill_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_3 %>
+    <%= f.text_field :skill_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_4 %>
+    <%= f.text_field :skill_4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_5 %>
+    <%= f.text_field :skill_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tel_no %>
+    <%= f.text_field :tel_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skype_id %>
+    <%= f.text_field :skype_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :linkedin_url %>
+    <%= f.text_field :linkedin_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :voice_call_y %>
+    <%= f.text_field :voice_call_y %>
+  </div>
+
+  <div class="field">
+    <%= f.label :voice_call_r %>
+    <%= f.text_field :voice_call_r %>
+  </div>
+
+  <div class="field">
+    <%= f.label :video_call_y %>
+    <%= f.text_field :video_call_y %>
+  </div>
+
+  <div class="field">
+    <%= f.label :video_call_r %>
+    <%= f.text_field :video_call_r %>
+  </div>
+
+  <div class="field">
+    <%= f.label :meeting_y %>
+    <%= f.text_field :meeting_y %>
+  </div>
+
+  <div class="field">
+    <%= f.label :meeting_r %>
+    <%= f.text_field :meeting_r %>
+  </div>
+
+  <div class="field">
+    <%= f.label :currency %>
+    <%= f.text_field :currency %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_emp %>
+    <%= f.text_field :current_emp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prev_emp_1 %>
+    <%= f.text_field :prev_emp_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prev_emp_2 %>
+    <%= f.text_field :prev_emp_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= f.label :no_of_rating %>
+    <%= f.number_field :no_of_rating %>
+  </div>
+
+  <div class="field">
+    <%= f.label :money_earner %>
+    <%= f.text_field :money_earner %>
+  </div>
+
+  <div class="field">
+    <%= f.label :money_disbursed %>
+    <%= f.text_field :money_disbursed %>
+  </div>
+  <div class="field">
+    <%= f.label :bachelor_college %>
+    <%= f.text_field :bachelor_college %>
+  </div>
+  <div class="field">
+    <%= f.label :masters_college %>
+    <%= f.text_field :masters_college %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

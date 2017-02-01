@@ -83,4 +83,4 @@ production:
   <<: *default
   database: projextx1_production
   username: rails
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  password: nRrhfo2VwK

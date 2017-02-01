@@ -28,7 +28,7 @@ class CandidatesController < ApplicationController
 
     respond_to do |format|
       if @candidate.save
-        format.html { redirect_to sessions_candidate_create_url, notice: 'Registration Successful. Please log in' }
+        format.html { redirect_to sessions_candidate_url, notice: 'Registration Successful. Please log in' }
         format.json { render :show, status: :created, location: @candidate }
       else
         format.html { render :new }

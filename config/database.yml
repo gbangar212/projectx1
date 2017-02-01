@@ -16,8 +16,6 @@
 #
 default: &default
   host: localhost
-  username: rails
-  password: 
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
@@ -85,4 +83,4 @@ production:
   <<: *default
   database: projextx1_production
   username: rails
-  password:
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>

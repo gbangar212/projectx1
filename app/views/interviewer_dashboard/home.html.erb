@@ -1,6 +1,9 @@
 <h1> This is home page interviewer </h1>
 <p id="notice"><%= notice %></p>
 
+<% if @no_request == 1 %>
+<h1> You have no requests yet! </h1>
+<% else %>
 <h1>Requests</h1>
 
 <table>
@@ -22,6 +25,7 @@
       <th>Approved time</th>
       <th>Candidate</th>
       <th>Interviewer</th>
+      <th>Options</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -45,6 +49,9 @@
         <td><%= request.approved_time %></td>
         <td><%= request.candidate %></td>
         <td><%= request.interviewer %></td>
+        <td> <%= radio_button_tag(:time, "1") %>
+             <%= label_tag(:time_1, "#{request.time_1}") %> </td>
+
         <td><%= link_to "Approve", interviewer_dashboard_approve_url %></td>
       </tr>
     <% end %>
@@ -52,3 +59,5 @@
 </table>
 
 <br>
+
+<% end %>

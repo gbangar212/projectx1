@@ -18,16 +18,17 @@ class CandidateDashboardController < ApplicationController
     org_pos = params[:org_pos]
 
     #the code below will find what parameters were submitted and then will process the query as needed
-    if college_name.nil? and org_name.nil? and org_pos.nil? #nothing is provided in the form (use this chek in the javascript as well)
+    if college_name == "" and org_name =="" and org_pos == "" #nothing is provided in the form (use this chek in the javascript as well)
       redirect_to candidate_dashboard_url, notice: 'Please enter atleast one criteria'
-    elsif college_name != nil #if college name is provided then process this block
+    elsif college_name != "" #if college name is provided then process this block
       #find interviewers with same college background and display them
       #parametere to match: candidate, interviewer bachelorscollege, candidate interviewer old employer
       #and the college name mentioned in the research parameters
       #or we can have all the students diplayed and then sorted in this order, then sorted in the order or ratings
       @interviewers = Interviewer.where(masters_college: params[:college_name])
-      if @interviewers.nil?
+      if @interviewers.blank?
         #display message that no interviewrs were found matching the criteria and redirect to home
+        redirect_to candidate_dashboard_url, notice: 'No experts with matching criteria'
       end
     elsif org_name != nil and org_pos != nil
       #find interviewer with this search query
@@ -42,7 +43,7 @@ class CandidateDashboardController < ApplicationController
   end
 
   def select_time_date
-    
+
 
   end
 
@@ -50,7 +51,7 @@ class CandidateDashboardController < ApplicationController
   protected
   def authorize
     @candidate = Candidate.find_by(id: session[:user_id]) #find candidate using email id
-    if @candidate.nil?
+    if @candidate.blank?
       redirect_to sessions_candidate_url, notice: 'unable to authorize'
     end
   end

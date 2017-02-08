@@ -52,7 +52,7 @@ class CandidateDashboardController < ApplicationController
   def authorize
     @candidate = Candidate.find_by(id: session[:user_id]) #find candidate using email id
     if @candidate.blank?
-      redirect_to sessions_candidate_url, notice: 'unable to authorize'
+      redirect_to sessions_candidate_url, notice: 'Unable to authorize'
     end
   end
 end

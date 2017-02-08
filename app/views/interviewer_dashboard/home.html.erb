@@ -2,62 +2,54 @@
 <p id="notice"><%= notice %></p>
 
 <% if @no_request == 1 %>
-<h1> You have no requests yet! </h1>
+  <h1> You have no requests yet! </h1>
 <% else %>
-<h1>Requests</h1>
+  <h1>Requests</h1>
+  <% @requests.each do |request| %>
+      <%= form_tag do %>
+        <table>
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>Date and Time</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date 1</th>
-      <th>Time 1</th>
-      <th>Date 2</th>
-      <th>Time 2</th>
-      <th>Date 3</th>
-      <th>Time 3</th>
-      <th>Date 4</th>
-      <th>Time 4</th>
-      <th>Date 5</th>
-      <th>Time 5</th>
-      <th>Mode</th>
-      <th>Approved</th>
-      <th>Approved date</th>
-      <th>Approved time</th>
-      <th>Candidate</th>
-      <th>Interviewer</th>
-      <th>Options</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <tbody>
 
-  <tbody>
-    <% @requests.each do |request| %>
-      <tr>
-        <td><%= request.date_1 %></td>
-        <td><%= request.time_1 %></td>
-        <td><%= request.date_2 %></td>
-        <td><%= request.time_2 %></td>
-        <td><%= request.date_3 %></td>
-        <td><%= request.time_3 %></td>
-        <td><%= request.date_4 %></td>
-        <td><%= request.time_4 %></td>
-        <td><%= request.date_5 %></td>
-        <td><%= request.time_5 %></td>
-        <td><%= request.mode %></td>
-        <td><%= request.approved %></td>
-        <td><%= request.approved_date %></td>
-        <td><%= request.approved_time %></td>
-        <td><%= request.candidate %></td>
-        <td><%= request.interviewer %></td>
-        <td> <%= radio_button_tag(:time, "1") %>
-             <%= label_tag(:time_1, "#{request.time_1}") %> </td>
+            <tr>
+              <td rowspan="5"><%= request.candidate %></td>
 
-        <td><%= link_to "Approve", interviewer_dashboard_approve_url %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <td><%= radio_button_tag(request.id, "1") %>
+                <%= label_tag(:time_1, "#{request.time_1}") %></td>
 
+              <td rowspan="5"><%= button_to "Approve", interviewer_dashboard_url, params: {id: request.id, status: 1} %></td>
+              <td rowspan="5"><%= button_to "Reject", interviewer_dashboard_url, params: {id: request.id, status: 2} %></td></tr>
+            <tr> <td>
+              <%= radio_button_tag(request.id, "2") %>
+              <%= label_tag(:time_2, "#{request.time_2}") %> </td>
+            </tr>
+
+            <tr><td>
+              <%= radio_button_tag(request.id, "3") %>
+              <%= label_tag(:time_3, "#{request.time_3}") %></td>
+            </tr>
+
+            <tr><td>
+              <%= radio_button_tag(request.id, "4") %>
+              <%= label_tag(:time_4, "#{request.time_4}") %></td>
+            </tr>
+
+            <tr><td>
+              <%= radio_button_tag(request.id, "5") %>
+              <%= label_tag(:time_5, "#{request.time_5}") %></td>
+            </tr>
+
+          </tbody>
+        </table>
+<% end %>
 <br>
-
+<% end %>
 <% end %>

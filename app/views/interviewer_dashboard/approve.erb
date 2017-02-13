@@ -1,1 +1,6 @@
+<%= form_tag do %>
+<%= label_tag  :reason , "reason for rejection" %> <br>
+<%= text_area_tag 'reason', nil, rows: 5, cols: 30 %> <br>
+<%= button_to "Submit", interviewer_dashboard_url, params: {id: @rejected_request.id, status: 2} %>
 
+<% end %>

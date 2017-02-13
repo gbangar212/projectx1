@@ -9,13 +9,13 @@ Rails.application.routes.draw do
 
   get 'interviewer_dashboard' => 'interviewer_dashboard#home'
   post 'interviewer_dashboard' => 'interviewer_dashboard#approve'
-  
+
   get 'candidate_dashboard' => 'candidate_dashboard#home'
   post 'candidate_dashboard' => 'candidate_dashboard#results'
 
   get 'admin_dashboard' => 'admin_dashboard#home'
 
-  get 'interviewer_select_time_date' => 'candidate_dashboard#select_time_date'
+  post 'submit_reason' => 'submit_reason#save_reason'
 
 
   resources :admins

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'candidate_dashboard' => 'candidate_dashboard#home'
   post 'candidate_dashboard' => 'candidate_dashboard#results'
+  get 'candidate_dashboard_requests' => 'candidate_dashboard#requests'
 
   get 'admin_dashboard' => 'admin_dashboard#home'
 

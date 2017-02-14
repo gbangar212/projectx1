@@ -1,9 +1,9 @@
 class CandidateDashboardController < ApplicationController
-  before_action :authorize
-  def home
-  end
+  before_action :authorize #check if the candidate is logged in or not
+  def home #display the home page of the candidate, has options to search
+  end #end of home
 
-  def results
+  def results #show the results after search
     #candidate = Candidate.find_by(id: session[:user_id])
     #get the name of the bachelors college of the candidate
     candidate_bachelor_college = @candidate.bachelor_college
@@ -42,17 +42,38 @@ class CandidateDashboardController < ApplicationController
     end
   end
 
-  def select_time_date
+  def requests #show the requests when the action is clicked
+    @all_requests = Request.where(candidate: @candidate.id) #find all the requests for this candidate
+    if @all_requests.blank?
+      @no_request = 1
+    else
+    @accepted_requests = Array.new
+    @rejected_requests = Array.new
+    @edited_requests = Array.new
+    @completed_requests = Array.new
+    @pending_requests = Array.new
+    @all_requests.each do |request|
+      case request.request_status #sort thr request using status 1: approved, 2: rejected 3: edited 4: completed
+      when "1" #requests has been approveded
+        @accepted_requests << request
+      when "2"
+        @rejected_requests << request
+      when "3"
+      when "4"
+        @completed_requests << request
+      else
+        @pending_requests << request
+      end
 
-
-  end
-
+      end #endof loop
+    end #end of if else
+  end #end of requests
 
   protected
   def authorize
     @candidate = Candidate.find_by(id: session[:user_id]) #find candidate using email id
     if @candidate.blank?
       redirect_to sessions_candidate_url, notice: 'Unable to authorize'
-    end
-  end
-end
+    end #end of if
+  end #end of authorize
+end #end of controller

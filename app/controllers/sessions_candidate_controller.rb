@@ -13,5 +13,7 @@ class SessionsCandidateController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
+    redirect_to homepage_url
   end
 end

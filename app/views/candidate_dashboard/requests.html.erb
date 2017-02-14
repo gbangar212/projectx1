@@ -1,0 +1,53 @@
+<%= render 'navbar' %>
+<h1> Accepted Requests </h1>
+<% if @accepted_requests.blank? %>
+<h3> You have not accepted any requests yet </h3>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Approved date</th>
+      <th>Approved time</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @accepted_requests.each do |request| %>
+    <tr>
+      <td><%= request.candidate %></td>
+      <td><%= request.approved_date %> </td>
+      <td><%= request.approved_time %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
+<h1> Completed Requests </h1>
+<% if @completed_requests.blank? %>
+<h3> you have not completed any requests yet </h3>
+<% else %>
+
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Approved date</th>
+      <th>Approved time</th>
+      <th></th>
+    </tr>
+  </thead>
+<tbody>
+<% @completed_requests.each do |request| %>
+    <tr>
+      <td> <%= request.candidate %></td>
+      <td> <%=request.approved_date %></td>
+      <td> <%= request.approved_time %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>

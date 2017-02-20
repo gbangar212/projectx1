@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  candidate: MyString
+  interviewer: MyString
+  request: MyString
+  type: 
+  message: MyText
+
+two:
+  candidate: MyString
+  interviewer: MyString
+  request: MyString
+  type: 
+  message: MyText

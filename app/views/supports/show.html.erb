@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Candidate:</strong>
+  <%= @support.candidate %>
+</p>
+
+<p>
+  <strong>Interviewer:</strong>
+  <%= @support.interviewer %>
+</p>
+
+<p>
+  <strong>Request:</strong>
+  <%= @support.request %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @support.request_type %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @support.message %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @support.status %>
+</p>
+<%= link_to 'Edit', edit_support_path(@support) %> |
+<%= link_to 'Back', supports_path %>

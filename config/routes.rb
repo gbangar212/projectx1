@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :supports
   get 'sessions_candidate' => 'sessions_candidate#new'
   post 'sessions_candidate' => 'sessions_candidate#create'
   delete 'sessions_candidate' => 'sessions_candidate#destroy'

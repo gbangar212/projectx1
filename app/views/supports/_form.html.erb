@@ -1,0 +1,42 @@
+<%= form_for(support) do |f| %>
+  <% if support.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(support.errors.count, "error") %> prohibited this support from being saved:</h2>
+
+      <ul>
+      <% support.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :candidate %>
+    <%= f.text_field :candidate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interviewer %>
+    <%= f.text_field :interviewer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request %>
+    <%= f.text_field :request %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_type %>
+    <%= f.text_field :request_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

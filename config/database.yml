@@ -84,7 +84,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
   database: projextx1_production
   username: rails
   password: nRrhfo2VwK
+  host: localhost

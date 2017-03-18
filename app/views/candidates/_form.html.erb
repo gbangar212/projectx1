@@ -10,43 +10,54 @@
       </ul>
     </div>
   <% end %>
+<table>
+  <tr>
+  <div class="form-group">
+    <td><%= f.label :email_id, class: 'col-sm-2 control-label' %></td>
+    <td><%= f.text_field :email_id, class: 'form-control' %></td>
+  </div></tr>
 
-  <div class="field">
-    <%= f.label :email_id %>
-    <%= f.text_field :email_id %>
-  </div>
+  <tr>
+  <div class="form-group">
+    <td><%= f.label :password, class: 'col-sm-2 control-label' %></td>
+    <td><%= f.password_field :password, class: 'form-control' %></td>
+  </div></tr>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+<tr>
+  <div class="form-group">
+    <td><%= f.label :password_confirmation, class: 'col-sm-2 control-label' %></td>
+    <td><%= f.password_field :password_confirmation, class: 'form-control' %></td>
+  </div></tr>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
+<tr>
+  <div class="form-group">
+    <td><%= f.label :name, class: 'col-sm-2 control-label' %></td>
+    <td><%= f.text_field :name, class: 'form-control' %></td>
+  </div></tr>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+<tr>
+  <div class="form-group">
+    <td><%= f.label :tel_no, class: 'col-sm-2 control-label' %></td>
+    <td><%= f.text_field :tel_no, class: 'form-control' %></td>
+  </div></tr>
 
-  <div class="field">
-    <%= f.label :tel_no %>
-    <%= f.text_field :tel_no %>
-  </div>
+<tr>
+  <div class="form-group">
+    <td><%= f.label :skype_id, class: 'col-sm-2 control-label' %></td>
+    <td><%= f.text_field :skype_id, class: 'form-control' %></td>
+  </div></tr>
 
-  <div class="field">
-    <%= f.label :skype_id %>
-    <%= f.text_field :skype_id %>
-  </div>
+<tr>
+  <div class="form-group">
+    <td><%= f.label :linkedin_url, class: 'col-sm-2 control-label' %></td>
+    <td><%= f.text_field :linkedin_url, class: 'form-control' %></td>
+  </div></tr>
 
-  <div class="field">
-    <%= f.label :linkedin_url %>
-    <%= f.text_field :linkedin_url %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<tr>
+  <td></td><td>
+    <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit %></td> </div> </div>
+  </tr>
+</table>
 <% end %>

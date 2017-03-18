@@ -1,5 +1,4 @@
-<h1>SessionsCandidate#new</h1>
-<p>Find me in app/views/sessions_candidate/new.html.erb</p>
+
 <% if flash[:alert] %>
 <p id = "notice"><%= flash[:alert] %></p>
 <% end %>
@@ -7,7 +6,9 @@
 <p id = "notice"><%= notice %></p>
 <% end %>
 
-<%= form_tag do %>
+<div class="login-page">
+  <div class="form">
+<%= form_tag({}, {:class => "login-form"}) do %>
 <fieldset>
   <legend> Please Log In </legend>
   <div>
@@ -27,4 +28,6 @@
    </div>
 </fieldset>
 <% end %>
+</div>
+</div>
 </div>

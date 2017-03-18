@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'login/new'
+
   resources :supports
   get 'sessions_candidate' => 'sessions_candidate#new'
   post 'sessions_candidate' => 'sessions_candidate#create'

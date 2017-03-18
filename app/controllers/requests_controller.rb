@@ -16,7 +16,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
-    session[:i_id] = Interviewer.find_by(id: params[:format]).id
+    #session[:id] = Interviewer.find_by(id: params[:format]).id
   end
 
   # GET /requests/1/edit

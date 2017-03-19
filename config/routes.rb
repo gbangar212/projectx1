@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about/aboutus'
+
   get 'login/new'
 
   resources :supports
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
   post 'sessions_candidate' => 'sessions_candidate#create'
   delete 'sessions_candidate' => 'sessions_candidate#destroy'
 
-  get 'session_interviewer' => 'session_interviewer#new'
+  get 'session_interviewer' => 'session_interviewer#new', as: 'login'
   post 'session_interviewer' => 'session_interviewer#create'
   delete 'session_interviewer' => 'session_interviewer#destroy'
 
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
   get 'admin_dashboard' => 'admin_dashboard#home'
 
   post 'submit_reason' => 'submit_reason#save_reason'
+
+  get 'about' => 'about#aboutus'
 
 
   resources :admins

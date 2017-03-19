@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
-  get 'about/aboutus'
-
-  get 'login/new'
-
-  resources :supports
+  
   get 'sessions_candidate' => 'sessions_candidate#new'
   post 'sessions_candidate' => 'sessions_candidate#create'
   delete 'sessions_candidate' => 'sessions_candidate#destroy'
 
-  get 'session_interviewer' => 'session_interviewer#new', as: 'login'
+  get 'session_interviewer' => 'session_interviewer#new'
   post 'session_interviewer' => 'session_interviewer#create'
   delete 'session_interviewer' => 'session_interviewer#destroy'
 
@@ -25,6 +21,10 @@ Rails.application.routes.draw do
 
   get 'about' => 'about#aboutus'
 
+  get 'login' => 'login#new'
+  post 'login' => 'login#create'
+  delete 'login' => 'login#destroy'
+
 
   resources :admins
   resources :interviewers
@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :testimonials
   resources :currencies
   resources :skills
+  resources :supports
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root "homepage#home", as: 'homepage'

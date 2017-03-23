@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
-  before_action :authorize #uncomment this once the site has to go live
+  #before_action :authorize #uncomment this once the site has to go live
   def home
 
   end

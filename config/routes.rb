@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'dashboard/home'
+
+  get 'dashboard/approve'
+
+  get 'dashboard/authorize'
+
   get 'sessions_candidate' => 'sessions_candidate#new'
   post 'sessions_candidate' => 'sessions_candidate#create'
   delete 'sessions_candidate' => 'sessions_candidate#destroy'

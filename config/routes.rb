@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  
-  get 'dashboard/home'
 
-  get 'dashboard/approve'
-
-  get 'dashboard/authorize'
+  devise_for :users
+  get 'dashboard' => 'dashboard#home'
+  get 'dashboard_approve' => 'dashboard#approve'
+  get 'dashboard_authorize' => 'dashboard#authorize'
 
   get 'sessions_candidate' => 'sessions_candidate#new'
   post 'sessions_candidate' => 'sessions_candidate#create'
@@ -30,6 +29,13 @@ Rails.application.routes.draw do
   get 'login' => 'login#new'
   post 'login' => 'login#create'
   delete 'login' => 'login#destroy'
+
+  resources :linkedin
+  get '/linkedin_profile' => "linkedin#linkedin_profile"
+  get '/oauth_account' => "linkedin#oauth_account"
+  get '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url'
+  post '/oauth_account' => "linkedin#oauth_account"
+  post '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url'
 
 
   resources :admins
